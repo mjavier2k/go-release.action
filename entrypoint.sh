@@ -9,7 +9,7 @@ fi
 
 export TMPDIR=$(mktemp -d)
 
-if [[ ! -z $EXECUTABLE_NAME ]]; then
+if [[ -z $EXECUTABLE_NAME ]]; then
   export EXECUTABLE_NAME=docsite${EXT}
 fi
 
