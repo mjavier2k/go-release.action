@@ -8,8 +8,12 @@ if [ $GOOS == 'windows' ]; then
 fi
 
 export TMPDIR=$(mktemp -d)
-export EXECUTABLE_NAME=docsite${EXT}
 export EXECUTABLE_PATH=${TMPDIR}/${EXECUTABLE_NAME}
+
+if [[ ! -z $EXECUTABLE_NAME ]]; then
+  export EXECUTABLE_NAME=docsite${EXT}
+fi
+
 
 /build.sh
 
